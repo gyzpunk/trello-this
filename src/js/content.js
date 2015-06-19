@@ -52,6 +52,9 @@ console.debug("selection is:", selection);
 
       // We're looking at a GitHub issue
       name = $("#show_issue .number strong").text() + " " + $("#show_issue .discussion-topic-title").text();
+      if(/^\s*$/.test(name)) {
+          name = $("#show_issue .gh-header-number").text() + " " + $("#show_issue .js-issue-title").text();
+      }
 
     } else if ($("#all_commit_comments").length) {
 
